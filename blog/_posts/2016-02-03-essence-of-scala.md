@@ -13,9 +13,9 @@ it's DOT, the calculus of dependent object types, that underlies Scala.
 A [paper on DOT](http://infoscience.epfl.ch/record/215280) will be
 presented in April at [Wadlerfest](http://events.inf.ed.ac.uk/wf2016),
 an event celebrating Phil Wadler's 60th birthday. There's also a prior
-[technical report](http://arxiv.org/abs/1510.05216v1) by Tiark Rompf
+technical report (["From F to DOT"](http://arxiv.org/abs/1510.05216)) by Tiark Rompf
 and Nada Amin describing a slightly different version of the
-calculus. Each version describes a proof of type soundness that has
+calculus. Each paper describes a proof of type soundness that has
 been machine-checked for correctness.
 
 ## The DOT calculus
@@ -62,9 +62,14 @@ semantics, i.e. it explains evaluation as step-wise rewritings of
 terms. To do this, it needs to restrict terms to be in [A-normal
 form](https://en.wikipedia.org/wiki/A-normal_form), that is, every
 intermediate term is abstracted out in a local definition.
+The latest revision of the "From F to DOT" report also shows how the
+small step proof can be mechanically derived from the big step
+result, removing the need for A-normal form and other simplifying 
+restrictions present in the Wadlerfest paper.
+
 
 The following _type soundness_ property was shown in each case with a
-mechanized proof:
+mechanized (i.e. machine-checked) proof:
 
 > If a term `t` has type `T`, and the evaluation of `t` terminates, then
   the result of the evaluation will be a value `v` of type `T`.
